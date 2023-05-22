@@ -1,6 +1,8 @@
 package model;
 
-public class Pessoa {
+import java.io.Serializable;
+
+public class Pessoa implements Serializable {
     protected int id;
     protected String nome;
 

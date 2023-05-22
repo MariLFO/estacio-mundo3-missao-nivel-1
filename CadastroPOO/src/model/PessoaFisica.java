@@ -1,6 +1,8 @@
 package model;
 
-public class PessoaFisica extends Pessoa {
+import java.io.Serializable;
+
+public class PessoaFisica extends Pessoa implements Serializable {
     private String cpf;
     private int idade;
 
