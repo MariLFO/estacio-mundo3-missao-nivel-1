@@ -1,4 +1,6 @@
 import model.Pessoa;
+import model.PessoaFisica;
+import model.PessoaJuridica;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,13 +9,11 @@ public class Main {
         Pessoa p2 = new Pessoa(2, "Maria");
         p2.exibir();
 
-        p1.getId();
-        p1.exibir();
+        PessoaFisica pf= new PessoaFisica(3, "Laura", "000.000.000-00", 50);
+        pf.exibir();
 
-        p1.getId();
-        p1.exibir();
-
-        p2.exibir();
+        PessoaJuridica pj= new PessoaJuridica(4,"Estácio de Sá", "01.024.763/0001-35");
+        pj.exibir();
     }
 
 }

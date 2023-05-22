@@ -1,8 +1,8 @@
 package model;
 
 public class Pessoa {
-    private int id;
-    private String nome;
+    protected int id;
+    protected String nome;
 
     public Pessoa(){
 
