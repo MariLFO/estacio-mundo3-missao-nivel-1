@@ -1,6 +1,9 @@
 import model.Pessoa;
 import model.PessoaFisica;
 import model.PessoaJuridica;
+import model.PessoaJuridicaRepo;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
