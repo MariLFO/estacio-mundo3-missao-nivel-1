@@ -11,13 +11,10 @@ public class PessoaFisica extends Pessoa implements Serializable {
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
-
     }
 
     @Override
     public void exibir() {
         System.out.println("id: "+ this.id + ", nome: "+ this.nome + ", cpf: "+ this.cpf + ", idade: "+ this.idade);
     }
-
-
 }

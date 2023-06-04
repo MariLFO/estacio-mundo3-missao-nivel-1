@@ -6,6 +6,10 @@ import java.util.ArrayList;
 public class PessoaJuridicaRepo {
     private ArrayList<PessoaJuridica> pessoasJuridicas;
 
+    public PessoaJuridicaRepo(){
+        this.pessoasJuridicas = new ArrayList<PessoaJuridica>();
+    }
+
     public void inserir(PessoaJuridica entidade) {
         this.pessoasJuridicas.add(entidade);
     }
@@ -27,11 +31,13 @@ public class PessoaJuridicaRepo {
         FileOutputStream fos = new FileOutputStream(nomeArquivo);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(this.pessoasJuridicas);
+        System.out.println("Dados de Pessoa Jurídica Armazenados.");
     }
 
     public void recuperar(String nomeArquivo) throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(nomeArquivo);
         ObjectInputStream ois = new ObjectInputStream(fis);
         this.pessoasJuridicas = (ArrayList<PessoaJuridica>) ois.readObject();
+        System.out.println("Dados de Pessoa Jurídica Recuperados.");
     }
 }
