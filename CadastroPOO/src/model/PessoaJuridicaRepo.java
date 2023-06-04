@@ -1,5 +1,8 @@
 package model;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class PessoaJuridicaRepo {
@@ -20,5 +23,11 @@ public class PessoaJuridicaRepo {
 
     public ArrayList<PessoaJuridica> obterTodos(){
         return this.pessoasJuridicas;
+    }
+
+    public void persistir(String nomeArquivo) throws IOException {
+        FileOutputStream fos = new FileOutputStream(nomeArquivo);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(this.pessoasJuridicas);
     }
 }
