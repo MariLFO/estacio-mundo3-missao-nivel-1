@@ -1,8 +1,6 @@
 package model;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 
 public class PessoaJuridicaRepo {
@@ -29,5 +27,11 @@ public class PessoaJuridicaRepo {
         FileOutputStream fos = new FileOutputStream(nomeArquivo);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(this.pessoasJuridicas);
+    }
+
+    public void recuperar(String nomeArquivo) throws IOException, ClassNotFoundException {
+        FileInputStream fis = new FileInputStream(nomeArquivo);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        this.pessoasJuridicas = (ArrayList<PessoaJuridica>) ois.readObject();
     }
 }
