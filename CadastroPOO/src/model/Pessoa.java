@@ -7,15 +7,15 @@ public class Pessoa implements Serializable {
     protected String nome;
 
     public Pessoa(){
-
     }
+
     public Pessoa(int id, String nome){
         this.id = id;
         this.nome = nome;
     }
+
     public void exibir() {
         System.out.println("id: "+ this.id + ", nome: "+ this.nome);
-
     }
 
     public int getId() {

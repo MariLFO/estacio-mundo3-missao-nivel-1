@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class PessoaFisicaRepo {
-    private ArrayList<PessoaFisica>  pessoasFisicas;
+    private ArrayList<PessoaFisica> pessoasFisicas;
 
     public PessoaFisicaRepo(){
         this.pessoasFisicas = new ArrayList<PessoaFisica>();
@@ -14,12 +14,12 @@ public class PessoaFisicaRepo {
         this.pessoasFisicas.add(entidade);
     }
 
-    public void alterar(PessoaFisica entidade){
+    public void alterar(PessoaFisica entidade) {
         this.excluir(entidade.id);
         this.inserir(entidade);
     }
 
-    public void  excluir(int id){
+    public void excluir(int id){
         this.pessoasFisicas.removeIf(item -> item.id == id);
     }
 
