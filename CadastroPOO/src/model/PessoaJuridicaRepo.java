@@ -23,6 +23,14 @@ public class PessoaJuridicaRepo {
         this.pessoasJuridicas.removeIf(item -> item.id == id);
     }
 
+    public PessoaJuridica obter(int id) {
+        for (PessoaJuridica item : this.pessoasJuridicas) {
+            if (item.id == id) {
+                return item;
+            }
+        }
+        return null;
+    }
     public ArrayList<PessoaJuridica> obterTodos(){
         return this.pessoasJuridicas;
     }
@@ -31,13 +39,11 @@ public class PessoaJuridicaRepo {
         FileOutputStream fos = new FileOutputStream(nomeArquivo);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(this.pessoasJuridicas);
-        System.out.println("Dados de Pessoa Jurídica Armazenados.");
     }
 
     public void recuperar(String nomeArquivo) throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(nomeArquivo);
         ObjectInputStream ois = new ObjectInputStream(fis);
         this.pessoasJuridicas = (ArrayList<PessoaJuridica>) ois.readObject();
-        System.out.println("Dados de Pessoa Jurídica Recuperados.");
     }
 }
